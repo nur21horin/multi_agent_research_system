@@ -20,3 +20,6 @@ def build_search_agent():
         human_message=HumanMessage(content="Please use the tools to find information on the given topic."),
         output_parser=StrOutputParser(),
     )
+
+#2nd agent
+

@@ -4,7 +4,7 @@ from agents import build_reader_agent, build_search_agent, writer_chain, critic_
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Researchsyntra · AI Research Agent",
+    page_title="ResearchSyntra · AI Research Agent",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -503,6 +503,6 @@ if r:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="notice">
-    ResearchMind · Powered by LangChain multi-agent pipeline · Built with Streamlit
+    ResearchSyntra · Powered by LangChain multi-agent pipeline · Built with Streamlit
 </div>
 """, unsafe_allow_html=True)

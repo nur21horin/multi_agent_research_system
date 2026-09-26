@@ -32,4 +32,4 @@ def scrape_url(url: str) -> str:
     except Exception as e:
         return f"Could not scrape URL: {str(e)}"
 
-print(scrape_url.invoke("https://www.hindustantimes.com/world-news/russia-sanctions-act-taken-note-of-india-s-warning-that-new-us-tariffs-could-impact-ties-101790363965665.html"))
+#print(scrape_url.invoke("https://www.hindustantimes.com/world-news/russia-sanctions-act-taken-note-of-india-s-warning-that-new-us-tariffs-could-impact-ties-101790363965665.html"))

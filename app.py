@@ -4,7 +4,7 @@ from agents import build_reader_agent, build_search_agent, writer_chain, critic_
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="ResearchSyntra · AI Research Agent",
+    page_title="ResqoraMind · AI Research Agent",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -312,7 +312,7 @@ def step_card(num: str, title: str, state: str, desc: str = ""):
 
 
 # ── Session state init ────────────────────────────────────────────────────────
-for key in ("results", "running", "done"):
+for key in ("results", "running", "done", "alert_shown"):
     if key not in st.session_state:
         st.session_state[key] = {} if key == "results" else False
 
@@ -321,7 +321,7 @@ for key in ("results", "running", "done"):
 st.markdown("""
 <div class="hero">
     <div class="hero-eyebrow">Multi-Agent AI System</div>
-    <h1>Research<span>Mind</span></h1>
+    <h1>Resqora<span>Mind</span></h1>
     <p class="hero-sub">
         Four specialized AI agents collaborate — searching, scraping, writing,
         and critiquing — to deliver a polished research report on any topic.
@@ -483,11 +483,14 @@ if r:
         st.markdown("</div>", unsafe_allow_html=True)
 
         # Download
+        st.markdown('<div style="margin-top: 1.2rem; margin-bottom: 0.8rem;"></div>', unsafe_allow_html=True)
         st.download_button(
-            label="⬇  Download Report (.md)",
+            label="⬇  Download Report (.txt)",
             data=r["writer"],
-            file_name=f"research_report_{int(time.time())}.md",
-            mime="text/markdown",
+            file_name=f"research_report_{int(time.time())}.txt",
+            mime="text/plain",
+            use_container_width=True,
+            type="primary",
         )
 
     # Critic feedback
@@ -503,6 +506,6 @@ if r:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="notice">
-    ResearchSyntra · Powered by LangChain multi-agent pipeline · Built with Streamlit
+    ResqoraMind · Powered by LangChain multi-agent pipeline · Built with Streamlit
 </div>
 """, unsafe_allow_html=True)
